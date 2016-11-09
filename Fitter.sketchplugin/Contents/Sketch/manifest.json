@@ -1,0 +1,37 @@
+{
+  "name": "Fitter",
+  "description": "Resizes the selected layer to cover its containing artboard",
+  "author": "Seb Jachec",
+  "authorEmail": "hi@sebj.me",
+  "homepage": "https://github.com/sebj/Cover-Artboard",
+  "version": 1.0,
+  "bundleVersion": 1.0,
+  "compatibleVersion": 3.3,
+  "identifier": "me.sebj.cover-artboard",
+  "commands": [
+    {
+      "name": "Fit Width To Artboard",
+      "script": "fitter.js",
+      "handler": "fitWidthToArtboard",
+      "identifier": "fitWidthToArtboard"
+    },
+    {
+      "name": "Fit Height To Artboard",
+      "script": "fitter.js",
+      "handler": "fitHeightToArtboard",
+      "identifier": "fitHeightToArtboard"
+    },
+  ],
+  "menu" : {
+    "isRoot" : true,
+    "items" : [
+      {
+        "title" : "Fitter",
+        "items" : [
+          "fitWidthToArtboard",
+          "fitHeightToArtboard",
+        ]
+      }
+    ]
+  }
+}
