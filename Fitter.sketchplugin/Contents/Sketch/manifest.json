@@ -10,13 +10,13 @@
   "identifier": "com.fitter.sketchplugin",
   "commands": [
     {
-      "name": "Fit Width To Artboard",
+      "name": "Fit To Artboard Width",
       "script": "fitter.js",
       "handler": "fitWidthToArtboard",
       "identifier": "fitWidthToArtboard"
     },
     {
-      "name": "Fit Height To Artboard",
+      "name": "Fit To Artboard Height",
       "script": "fitter.js",
       "handler": "fitHeightToArtboard",
       "identifier": "fitHeightToArtboard"
@@ -26,6 +26,12 @@
       "script": "fitter.js",
       "handler": "fitToArtboard",
       "identifier": "fitToArtboard"
+    },
+    {
+      "name": "Fit To Artboard Margin...",
+      "script": "fitter.js",
+      "handler": "fitToArtboardMargins",
+      "identifier": "fitToArtboardMargins"
     },
   ],
   "menu" : {
@@ -37,6 +43,8 @@
           "fitToArtboard",
           "fitWidthToArtboard",
           "fitHeightToArtboard",
+          "-",
+          "fitToArtboardMargins"
         ]
       }
     ]
