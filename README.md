@@ -1,6 +1,6 @@
 # Fitter Sketch Plugin
 
-Fits layer to artboard width, height or both.
+Fits layers to parent artboard width, height or both, with the optional ability to add a margin.
 
 
 **Commands**
@@ -11,10 +11,6 @@ Fits layer to artboard width, height or both.
 ## Keyboard Shortcuts
 
 Especially useful when assigned to a keyboard shortcut. You must do this yourself under _Apple > Preferences > Keyboard > Shortcuts_. [How to set up Keyboard Shortcuts](http://www.sketchtips.info/articles/custom-shortcuts).
-
-Commands to copy are:
-
--
 
 
 ## Installation
