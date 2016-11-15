@@ -12,14 +12,14 @@
     {
       "name": "Fit To Artboard Width",
       "script": "fitter.js",
-      "handler": "fitWidthToArtboard",
-      "identifier": "fitWidthToArtboard"
+      "handler": "fitToArtboardWidth",
+      "identifier": "fitToArtboardWidth"
     },
     {
       "name": "Fit To Artboard Height",
       "script": "fitter.js",
-      "handler": "fitHeightToArtboard",
-      "identifier": "fitHeightToArtboard"
+      "handler": "fitToArtboardHeight",
+      "identifier": "fitToArtboardHeight"
     },
     {
       "name": "Fit To Artboard",
@@ -30,8 +30,20 @@
     {
       "name": "Fit To Artboard Margin...",
       "script": "fitter.js",
-      "handler": "fitToArtboardMargins",
-      "identifier": "fitToArtboardMargins"
+      "handler": "fitToArtboardMargin",
+      "identifier": "fitToArtboardMargin"
+    },
+    {
+      "name": "Fit To Artboard Height Margin...",
+      "script": "fitter.js",
+      "handler": "fitToArtboardHeightMargin",
+      "identifier": "fitToArtboardHeightMargin"
+    },
+    {
+      "name": "Fit To Artboard Width Margin...",
+      "script": "fitter.js",
+      "handler": "fitToArtboardWidthMargin",
+      "identifier": "fitToArtboardWidthMargin"
     },
   ],
   "menu" : {
@@ -41,10 +53,12 @@
         "title" : "Fitter",
         "items" : [
           "fitToArtboard",
-          "fitWidthToArtboard",
-          "fitHeightToArtboard",
+          "fitToArtboardWidth",
+          "fitToArtboardHeight",
           "-",
-          "fitToArtboardMargins"
+          "fitToArtboardMargin",
+          "fitToArtboardWidthMargin",
+          "fitToArtboardHeightMargin",
         ]
       }
     ]
