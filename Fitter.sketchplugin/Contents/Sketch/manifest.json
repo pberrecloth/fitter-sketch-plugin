@@ -44,7 +44,19 @@
       "script": "fitter.js",
       "handler": "fitToArtboardWidthMargin",
       "identifier": "fitToArtboardWidthMargin"
+    },  
+    {
+      "name": "Fit To Widest",
+      "script": "fitter.js",
+      "handler": "fitToWidest",
+      "identifier": "fitToWidest"
     },
+    {
+      "name": "Fit To Tallest",
+      "script": "fitter.js",
+      "handler": "fitToTallest",
+      "identifier": "fitToTallest"
+    }
   ],
   "menu" : {
     "isRoot" : true,
@@ -59,7 +71,10 @@
           "fitToArtboardMargin",
           "fitToArtboardWidthMargin",
           "fitToArtboardHeightMargin",
-        ]
+          "-",
+          "fitToWidest",
+          "fitToTallest"
+         ]
       }
     ]
   }

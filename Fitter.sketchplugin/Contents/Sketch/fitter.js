@@ -1,4 +1,3 @@
-
 // COMMANDS
 function fitToArtboard(context) {
   fitterProcessor(context, 0, 1, 1)
@@ -24,10 +23,66 @@ function fitToArtboardHeightMargin(context) {
   var margin = [[doc askForUserInput:"Margin" ofType:1 initialValue:"16"] integerValue];
   fitterProcessor(context, margin, null, 1)
 }
+function fitToWidest(context) {
+  var doc = context.document
+  var selection = context.selection
+  var selectionCount = selection.count()
+
+  if (selectionCount == 0) {
+    doc.showMessage("Please select at least two layers/artboards.")
+    return
+  } 
+  
+  var widestLayerWidth = selection[0].frame().width()
+
+  for (i=0;i<selectionCount;i++){
+      var layer = selection[i]
+      var layerWidth = layer.frame().width()
+
+      if (layerWidth > widestLayerWidth){
+        widestLayerWidth = layerWidth
+        var widestLayer = layer
+      }
+  }
+  var newWidth = widestLayerWidth
+
+  for (i=0;i<selectionCount;i++){
+      var layer = selection[i]
+      layer.frame().setWidth(newWidth)
+  }
+}
+function fitToTallest(context) {
+  var doc = context.document
+  var selection = context.selection
+  var selectionCount = selection.count()
+
+  if (selectionCount == 0) {
+    doc.showMessage("Please select at least two layers/artboards.")
+    return
+  } 
+  
+  var tallestLayerHeight = selection[0].frame().height()
+
+  for (i=0;i<selectionCount;i++){
+      var layer = selection[i]
+      var layerHeight = layer.frame().height()
+
+      if (layerHeight > tallestLayerHeight){
+        tallestLayerHeight = layerHeight
+        var tallestLayer = layer
+      }
+  }
+  var newHeight = tallestLayerHeight
+
+  for (i=0;i<selectionCount;i++){
+      var layer = selection[i]
+      layer.frame().setHeight(newHeight)
+  }
+}
 
 
 // PROCESSOR
-function fitterProcessor(context, margin, fitHorizontally, fitVertically) {
+function fitterProcessor(context, margin, fitHorizontally, fitVertically, fitWidest, fitTallest) {
   var doc = context.document
   var selection = context.selection
   var selectionCount = selection.count()
@@ -35,10 +90,9 @@ function fitterProcessor(context, margin, fitHorizontally, fitVertically) {
   if (selectionCount == 0) {
     doc.showMessage("Please select a layer.")
     return
+  } 
 
-  } else if (selectionCount >= 1) {
-
-    for (i=0;i<=selectionCount;i++){
+  for (i=0;i<=selectionCount;i++){
       var layer = selection[i]
 
       if ([layer class] != "MSArtboardGroup") {
@@ -73,9 +127,9 @@ function fitterProcessor(context, margin, fitHorizontally, fitVertically) {
           layer.frame().setY(newY)
           layer.frame().setHeight(newHeight)
         }
+
       }
 
     }
 
-  }
 };
